@@ -1,19 +1,26 @@
 import { useState } from "react";
 import { VIEWS } from "./views";
-import { Main } from "./views/Main";
+import { Home } from "./views/Home";
+import { Portfolio } from "./views/Portfolio"
 import { Error } from "./views/Error";
 
 export const App = (): JSX.Element => {
-  const [view, setView] = useState(VIEWS.main); 
+  const [view, setView] = useState(VIEWS.home); 
   
-  if (view === VIEWS.main) {
+  if (view === VIEWS.home) {
     return (
-      <Main setView={setView}/>
+      <Home setView={setView}/>
     );
   }
 
+  if (view === VIEWS.portfolio) {
+    return (
+      <Portfolio setView={setView}/>
+    )
+  }
+
   return (
-    <Error/>
+    <Error view={view}/>
   );
 }
 

@@ -1,5 +1,5 @@
 export const VIEWS = {
-  main: "main",
+  home: "home",
   portfolio: "portfolio",
   resume: "resume",
   inventory: "inventory",
