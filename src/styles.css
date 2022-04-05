@@ -55,3 +55,60 @@ b {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
+
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  width: 50%;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  padding-right: 10%;
+  width: 50%;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.greeting {
+  width: 100%;
+  padding-left: 10%;
+}
+
+.profile-pic {
+  padding-right: 10%;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150%;
+  border-radius: 100%;
+}
+
+.centered h1 {
+  font-size: 2em;
+  text-align: left;
+}
+
+.centered p {
+  font-size: 1.5em;
+  text-align: left;
+  width: 100%;
+}
