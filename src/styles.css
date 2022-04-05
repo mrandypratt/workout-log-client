@@ -1,0 +1,57 @@
+.light-font {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+.regular-font {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+a:link {
+  color: #8f8f8f;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #8f8f8f;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8f8f8f;
+  background-color: transparent;
+}
+
+a:active {
+  color: #8f8f8f;
+  background-color: transparent;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 5%;
+  width: 100%;
+  text-align: center;
+  color: #8f8f8f;
+}
+
+b {
+  font-size: larger;
+}
+
+.orange-pop {
+  color: #ffbd59;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.blue-pop {
+  color: #5ce1e6;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}

@@ -1,27 +1,38 @@
 import { useState } from "react";
 import { VIEWS } from "./views";
+import { Navbar } from "./views//Navbar"
 import { Home } from "./views/Home";
 import { Portfolio } from "./views/Portfolio"
-import { Error } from "./views/Error";
+import { Resume } from "./views/Resume";
+import { Footer } from "./views/Footer";
+import { useEffect } from "react";
 
 export const App = (): JSX.Element => {
   const [view, setView] = useState(VIEWS.home); 
-  
-  if (view === VIEWS.home) {
-    return (
-      <Home setView={setView}/>
-    );
-  }
 
-  if (view === VIEWS.portfolio) {
-    return (
-      <Portfolio setView={setView}/>
-    )
-  }
+  useEffect(() => {
+    document.body.style.backgroundColor = "#292929";
+    document.body.style.fontStyle = "Roboto";
+    document.body.style.color = "white";
+    
+    return () => {
+      document.body.style.backgroundColor = "white";
+    };
+  });
+
 
   return (
-    <Error view={view}/>
-  );
+    <div className="light-font" style={{textAlign: "center"}}>
+      <Navbar setView={setView}/>
+
+      {view === VIEWS.home && <Home />}
+      {view === VIEWS.portfolio && <Portfolio setView={setView}/>}
+      {view === VIEWS.resume && <Resume />}
+    
+
+      <Footer />
+    </div>
+  )
 }
 
 export default App;
