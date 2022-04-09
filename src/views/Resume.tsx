@@ -2,7 +2,7 @@ export const Resume = () => {
 
   return (
     <div>
-      <h1>Resume</h1>
+      <a href="https://andy-pratt-resume.tiiny.site/">Resume</a>
 
     </div>
   );

@@ -61,7 +61,6 @@ export const Navbar = ({ setView }: ViewType) => {
           >
             <img src={APDevIcon} alt="<APDev/>" onClick={updateToView.home} style={{cursor: "pointer"}}/>
 
-            {/* {"<AndyPrattDev />"} */}
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -108,7 +107,6 @@ export const Navbar = ({ setView }: ViewType) => {
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
             <img src={APDevIcon} alt="<APDev/>" onClick={updateToView.home} style={{cursor: "pointer"}}/>
-            {/* {"<AndyPrattDev />"} */}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
