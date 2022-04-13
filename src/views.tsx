@@ -1,7 +1,6 @@
 export const VIEWS = {
   home: "home",
   portfolio: "portfolio",
-  resume: "resume",
   inventory: "inventory",
   falseFile: "falseFile",
   stockInvestmentApp: "stockInvestmentApp",

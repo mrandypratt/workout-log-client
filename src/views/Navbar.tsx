@@ -11,9 +11,10 @@ import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import { ViewType } from './ViewType';
 import { VIEWS } from '../views';
+
 const APDevIcon = require('../APDevLogo.png');
 
-const pages = [VIEWS.portfolio, VIEWS.resume];
+const pages = [VIEWS.portfolio];
 
 export const Navbar = ({ setView }: ViewType) => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -38,10 +39,6 @@ export const Navbar = ({ setView }: ViewType) => {
   
     portfolio: () => {
       setView(VIEWS.portfolio)
-    },
-  
-    resume: () => {
-      setView(VIEWS.resume)
     },
   
     about: () => {
@@ -94,7 +91,7 @@ export const Navbar = ({ setView }: ViewType) => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={page === VIEWS.portfolio ? updateToView.portfolio : updateToView.resume}>
+                <MenuItem key={page} onClick={updateToView.portfolio}>
                   <Typography textAlign="center">{page.toUpperCase()}</Typography>
                 </MenuItem>
               ))}
@@ -112,7 +109,7 @@ export const Navbar = ({ setView }: ViewType) => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={page === VIEWS.portfolio ? updateToView.portfolio : updateToView.resume}
+                onClick={updateToView.portfolio}
                 sx={{ my: 2, color: 'inherit', display: 'block' }}
               >
                 {page}

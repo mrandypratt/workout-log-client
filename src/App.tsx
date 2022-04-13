@@ -27,8 +27,6 @@ export const App = (): JSX.Element => {
 
       {view === VIEWS.home && <Home />}
       {view === VIEWS.portfolio && <Portfolio setView={setView}/>}
-      {view === VIEWS.resume && <Resume />}
-    
 
       <Footer />
     </div>
