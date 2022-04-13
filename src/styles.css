@@ -139,11 +139,6 @@ p {
   font-size: 2rem;
 }
 
-.resume-button {
-  font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #ffbd59;
-  color: #ffbd59;
-  padding: 2px 6px 2px 6px;
-
+.footer-links {
+  font-size: 1.25rem;
 }
