@@ -1,5 +1,5 @@
-import { VIEWS } from "../views"
-import { ViewType } from "./ViewType"
+import { VIEWS } from "../constants/views"
+import { ViewType } from "../styles/ViewType"
 
 export const Portfolio = ({ setView }: ViewType) => {
 

@@ -1,5 +1,5 @@
 import React from "react";
-import resumePdf from "./resume.pdf"; // Cannot find module './resume.pdf'.ts(2307)
+import resumePdf from "../assets/AndyPrattResume.pdf"; // Cannot find module './resume.pdf'.ts(2307)
 
 
 export const Resume: React.FC = () => {

@@ -1,10 +1,9 @@
 import { Button } from "@mui/material"
 
-
 export const Home = () => {
 
   return (
-    <div className="home">
+    <div className="home-container">
 
       <div className="greeting-container">
         <h1>Hello! &#128075;</h1>
@@ -13,7 +12,7 @@ export const Home = () => {
       </div>
 
       <div className="profile-pic-container">
-        <img className="profile-pic" src={require("../Profile.jpeg")} alt="<APDev/>"></img>  
+        <img className="profile-pic" src={require("../assets/Profile.jpeg")} alt="<APDev/>"></img>  
       </div>
 
     </div>

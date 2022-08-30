@@ -9,10 +9,10 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
-import { ViewType } from './ViewType';
-import { VIEWS } from '../views';
+import { ViewType } from '../styles/ViewType';
+import { VIEWS } from '../constants/views';
 
-const APDevIcon = require('../APDevLogo.png');
+const APDevIcon = require('../assets/APDevLogo.png');
 
 const pages = [VIEWS.portfolio];
 
@@ -61,7 +61,7 @@ export const Navbar = ({ setView }: ViewType) => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            {/* <IconButton
+            <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -95,7 +95,7 @@ export const Navbar = ({ setView }: ViewType) => {
                   <Typography textAlign="center">{page.toUpperCase()}</Typography>
                 </MenuItem>
               ))}
-            </Menu> */}
+            </Menu>
           </Box>
           <Typography
             variant="h6"
@@ -105,7 +105,7 @@ export const Navbar = ({ setView }: ViewType) => {
           >
             <img src={APDevIcon} alt="<APDev/>" onClick={updateToView.home} style={{cursor: "pointer"}}/>
           </Typography>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -135,7 +135,7 @@ export const Navbar = ({ setView }: ViewType) => {
               onClose={handleCloseUserMenu}
             >
             </Menu>
-          </Box> */}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

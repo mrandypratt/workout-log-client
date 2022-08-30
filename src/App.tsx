@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { VIEWS } from "./views";
-import { Navbar } from "./views//Navbar"
+import { VIEWS } from "./constants/views";
+import { Navbar } from "./components/Navbar"
 import { Home } from "./views/Home";
 import { Portfolio } from "./views/Portfolio"
 import { Resume } from "./views/Resume";
-import { Footer } from "./views/Footer";
+import { Footer } from "./components/Footer";
 import { useEffect } from "react";
 
 export const App = (): JSX.Element => {

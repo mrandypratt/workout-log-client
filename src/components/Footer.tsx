@@ -1,9 +1,8 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FilePresentIcon from '@mui/icons-material/FilePresent';
-import resume from "./resume.pdf"; // Cannot find module './resume.pdf'.ts(2307)
-
-import "../styles.css"
+import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
+import resume from "../assets/AndyPrattResume.pdf"; // Cannot find module './resume.pdf'.ts(2307)
 
 export const Footer = () => {
 
@@ -24,8 +23,13 @@ export const Footer = () => {
         </a>
 
         <a className="footer-links" href={resume} target="_blank" rel="noreferrer noopener" style={{margin: 10}}>
-          <FilePresentIcon fontSize='medium' color="inherit"/>Resume
+          <FilePresentIcon fontSize='medium' color="inherit"/>Resume |
         </a>
+
+        <a className="footer-links" href={"http://cardswithfriendsgame.com"} target="_blank" rel="noreferrer noopener" style={{margin: 10}}>
+          <ViewCarouselIcon fontSize='medium' color="inherit"/> Project
+        </a>
+
       </div>
     </div>
   )
