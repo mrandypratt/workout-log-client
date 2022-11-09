@@ -1,75 +1,22 @@
 body {
   background-color: #292929;
-  font-style: "Roboto";
+  font-family: 'Roboto', sans-serif;
   color: white;
 }
 
-.default-app-styles {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+.app {
+}
+
+.page-container {
+  margin-top: 10%;
+} 
+
+.home-greeting {
   text-align: center;
+  font-weight: 100;
 }
 
-.regular-font {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
-
-a:link {
-  color: #8f8f8f;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #8f8f8f;
-  background-color: transparent;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #8f8f8f;
-  background-color: transparent;
-}
-
-a:active {
-  color: #8f8f8f;
-  background-color: transparent;
-}
-
-html {
-  height: 100%;
-}
-
-
-b {
-  font-size: larger;
-  position: relative;
-}
-
-.orange-pop {
-  color: #ffbd59;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-}
-
-.blue-pop {
-  color: #5ce1e6;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-}
-
-.home {
-  display: flex;
-  flex-direction: column;
-  text-align: "center";
-  font-size: 1.5rem;
-  max-height: 100%;
-}
-
-#root {
-  height: 100%;
-}
+/* Footer & Footer Links */
 
 .footer {
   position: absolute;
@@ -81,73 +28,42 @@ b {
   color: #8f8f8f;
   font-size: 1.5rem;
 }
-
-@media only screen and (min-width : 1065px) {
-  .home-container {
-    display: flex;
-    height: vh;
-    flex-direction: row;
-    justify-content: center;
-    flex-grow: 0;
-  }
-
-  .greeting-container {
-    width: 50%;
-    align-self: center;
-
-  }
-
-  .profile-pic-container {
-    width: 50%;
-    align-self: center;
-    padding-top: 1.5rem;
-  }
-
-  .profile-pic {
-    border-radius: 100%;
-    height: 30rem;
-  }
-}
-
-.greeting-container {
-  text-align: "center";
-}
-
-@media only screen and (max-width : 1064px) and (min-width : 566px) {
-  .profile-pic {
-    height: 30rem;
-  }
-
-  .footer {
-    position: relative;
-  }
-}
-
-.profile-pic {
-  border-radius: 100%;
-}
-
-@media only screen and (max-width : 565px) {
-  .profile-pic {
-    width: 85%;
-    max-width: 30rem;
-  }
-
-  .footer {
-    position: relative;
-  }
-}
-
-* {
-  border-style: border-box;
-}
-
-
-p {
-  font-size: 2rem;
-  color: "white";
-}
-
 .footer-links {
   font-size: 1.25rem;
 }
+
+.footer-links:link {
+  color: #8f8f8f;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.footer-links:visited {
+  color: #8f8f8f;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.footer-links:hover {
+  color: #8f8f8f;
+  background-color: transparent;
+}
+
+.footer-links:active {
+  color: #8f8f8f;
+  background-color: transparent;
+}
+
+
+
+/* .orange-pop {
+  color: #ffbd59;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.blue-pop {
+  color: #5ce1e6;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+} */

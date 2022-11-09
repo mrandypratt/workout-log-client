@@ -9,12 +9,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
-import { VIEWS } from '../constants/views';
 import { Link } from "react-router-dom"
 
 const APDevIcon = require('../assets/APDevLogo.png');
-
-const pages = [VIEWS.portfolio];
 
 export const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -76,11 +73,9 @@ export const Navbar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page}>
-                  <Typography textAlign="center">{page.toUpperCase()}</Typography>
-                </MenuItem>
-              ))}
+              <MenuItem>
+                <Typography textAlign="center">About</Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <Typography
@@ -92,14 +87,9 @@ export const Navbar = () => {
             <img src={APDevIcon} alt="<APDev/>"  style={{cursor: "pointer"}}/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                sx={{ my: 2, color: 'inherit', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button sx={{ my: 2, color: 'inherit', display: 'block' }}>
+              About
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

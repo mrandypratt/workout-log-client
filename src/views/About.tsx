@@ -1,5 +1,3 @@
-import { ViewType } from "../styles/ViewType"
-
 export const About = () => {
 
   return (
