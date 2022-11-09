@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import { VIEWS } from '../constants/views';
+import { Link } from "react-router-dom"
 
 const APDevIcon = require('../assets/APDevLogo.png');
 
@@ -30,20 +31,6 @@ export const Navbar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
-  const updateToView = {
-    home: () => {
-      // setView(VIEWS.home)
-    },
-  
-    portfolio: () => {
-      // setView(VIEWS.portfolio)
-    },
-  
-    about: () => {
-      // setView(VIEWS.about)
-    }
-  }
   
   return (
     <AppBar style={{backgroundColor: "#292929", fontStyle: "Roboto"}} color="inherit" position="static">
@@ -55,7 +42,7 @@ export const Navbar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <img src={APDevIcon} alt="<APDev/>" onClick={updateToView.home} style={{cursor: "pointer"}}/>
+            <Link to={"/"}><img src={APDevIcon} alt="<APDev/>" style={{cursor: "pointer"}}/></Link>
 
           </Typography>
 
@@ -90,7 +77,7 @@ export const Navbar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={updateToView.portfolio}>
+                <MenuItem key={page}>
                   <Typography textAlign="center">{page.toUpperCase()}</Typography>
                 </MenuItem>
               ))}
@@ -102,13 +89,12 @@ export const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <img src={APDevIcon} alt="<APDev/>" onClick={updateToView.home} style={{cursor: "pointer"}}/>
+            <img src={APDevIcon} alt="<APDev/>"  style={{cursor: "pointer"}}/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={updateToView.portfolio}
                 sx={{ my: 2, color: 'inherit', display: 'block' }}
               >
                 {page}

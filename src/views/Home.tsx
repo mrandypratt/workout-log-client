@@ -6,14 +6,15 @@ export const Home = () => {
     <div className="home-container">
 
       <div className="greeting-container">
-        <h1>Hello! &#128075;</h1>
-        <p>My name is <b className="orange-pop">Andy Pratt</b> and I am a <b className="blue-pop">Full-Stack Developer</b>.</p>
+        <h1>Home Page</h1>
+        {/* <h1>Hello! &#128075;</h1> */}
+        {/* <p>My name is <b className="orange-pop">Andy Pratt</b> and I am a <b className="blue-pop">Full-Stack Developer</b>.</p> */}
 
       </div>
 
-      <div className="profile-pic-container">
+      {/* <div className="profile-pic-container">
         <img className="profile-pic" src={require("../assets/Profile.jpeg")} alt="<APDev/>"></img>  
-      </div>
+      </div> */}
 
     </div>
   );
