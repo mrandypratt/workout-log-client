@@ -1,13 +1,13 @@
-type ViewType = {
-  view: string,
-}
+import { useRouteError } from "react-router-dom";
 
-export const Error = ({ view }: ViewType): JSX.Element => {
+export default function Error() {
+  const error = useRouteError();
+  console.error(error);
+
   return (
-    <div>
-      <h1>Error: View Not Set</h1>
-      
-      <p>The Current value of View is: {view}</p>
+    <div id="error-page">
+      <h1>Oops!</h1>
+      <p>Sorry, an unexpected error has occurred.</p>
     </div>
   );
 }
