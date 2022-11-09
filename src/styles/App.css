@@ -1,3 +1,9 @@
+body {
+  background-color: #292929;
+  font-style: "Roboto";
+  color: white;
+}
+
 .light-font {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
@@ -139,6 +145,7 @@ b {
 
 p {
   font-size: 2rem;
+  color: "white";
 }
 
 .footer-links {
