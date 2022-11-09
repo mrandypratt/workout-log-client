@@ -4,10 +4,10 @@ body {
   color: white;
 }
 
-.light-font {
+.default-app-styles {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  height: 100%;
+  text-align: center;
 }
 
 .regular-font {

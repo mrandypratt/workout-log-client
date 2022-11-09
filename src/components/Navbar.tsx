@@ -9,14 +9,13 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
-import { ViewType } from '../styles/ViewType';
 import { VIEWS } from '../constants/views';
 
 const APDevIcon = require('../assets/APDevLogo.png');
 
 const pages = [VIEWS.portfolio];
 
-export const Navbar = ({ setView }: ViewType) => {
+export const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -34,15 +33,15 @@ export const Navbar = ({ setView }: ViewType) => {
 
   const updateToView = {
     home: () => {
-      setView(VIEWS.home)
+      // setView(VIEWS.home)
     },
   
     portfolio: () => {
-      setView(VIEWS.portfolio)
+      // setView(VIEWS.portfolio)
     },
   
     about: () => {
-      setView(VIEWS.about)
+      // setView(VIEWS.about)
     }
   }
   

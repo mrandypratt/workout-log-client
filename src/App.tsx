@@ -12,7 +12,7 @@ export const App = (): JSX.Element => {
 
   return (
     <div className="light-font" style={{textAlign: "center"}}>
-      <Navbar setView={setView}/>
+      <Navbar/>
 
       {view === VIEWS.home && <Home />}
       {view === VIEWS.portfolio && <Portfolio setView={setView}/>}
