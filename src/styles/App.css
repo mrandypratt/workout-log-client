@@ -9,11 +9,40 @@ body {
 
 .page-container {
   margin-top: 10%;
+  margin-right: 10%;
+  margin-left: 10%;
 } 
 
 .home-greeting {
+  margin: 0;
   text-align: center;
-  font-weight: 100;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 2.25rem;
+}
+
+.home-paragraph {
+  margin-right: 15%;
+  margin-left: 15%;
+  text-align: center;
+  font-weight: 500;
+  font-size: x-large;
+}
+
+.orange-pop {
+  color: #ffbd59;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 525;
+  font-size: 5rem;
+  text-align: center;
+  margin:0;
+}
+
+.blue-pop {
+  color: #5ce1e6;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 1.75rem;
 }
 
 /* Footer & Footer Links */
@@ -53,17 +82,3 @@ body {
   color: #8f8f8f;
   background-color: transparent;
 }
-
-
-
-/* .orange-pop {
-  color: #ffbd59;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-}
-
-.blue-pop {
-  color: #5ce1e6;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-} */
