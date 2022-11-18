@@ -10,8 +10,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from "react-router-dom"
-
-const APDevIcon = require('../assets/APDevLogo.png');
+import { APDevLogo } from '../assets/APDevLogo';
 
 export const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -31,7 +30,7 @@ export const Navbar = () => {
   
   return (
     <AppBar style={{backgroundColor: "#292929", fontStyle: "Roboto"}} color="inherit" position="static">
-      <Container maxWidth="xl">
+      <div>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -39,7 +38,10 @@ export const Navbar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <Link to={"/"}><img src={APDevIcon} alt="<APDev/>" style={{cursor: "pointer"}}/></Link>
+
+          <Link to="/">
+            <APDevLogo/>
+          </Link>
 
           </Typography>
 
@@ -84,7 +86,11 @@ export const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <img src={APDevIcon} alt="<APDev/>"  style={{cursor: "pointer"}}/>
+
+          <Link to="/">
+            <APDevLogo/>
+          </Link>
+
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             <Button sx={{ my: 2, color: 'inherit', display: 'block' }}>
@@ -112,7 +118,7 @@ export const Navbar = () => {
             </Menu>
           </Box>
         </Toolbar>
-      </Container>
+      </div>
     </AppBar>
   );
 };
