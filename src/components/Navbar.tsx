@@ -1,124 +1,60 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from "react-router-dom"
 import { APDevLogo } from '../assets/APDevLogo';
+import React, { useState, useEffect } from 'react';
+import resume from "../assets/AndyPrattResume.pdf"; // Cannot find module './resume.pdf'.ts(2307)
 
-export const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-  
+const DesktopNavbar = (): JSX.Element => {
   return (
-    <AppBar style={{backgroundColor: "#292929", fontStyle: "Roboto"}} color="inherit" position="static">
-      <div>
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
+    <div className="desktop-nav">
+      <Link to="/">
+        <APDevLogo/>
+      </Link>
+      <div className="desktop-nav-button-container">
+        <Link to="/portfolio">
+          <div className="desktop-nav-button">
+              PORTFOLIO
+          </div>
+        </Link>
 
-          <Link to="/">
-            <APDevLogo/>
-          </Link>
+        <a href={resume} target="_blank" rel="noreferrer noopener">
+          <div className="desktop-nav-button">
+            RESUME
+          </div>
+        </a>
 
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              <MenuItem>
-                <Typography textAlign="center">About</Typography>
-              </MenuItem>
-            </Menu>
-          </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-
-          <Link to="/">
-            <APDevLogo/>
-          </Link>
-
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            <Button sx={{ my: 2, color: 'inherit', display: 'block' }}>
-              About
-            </Button>
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-            </Menu>
-          </Box>
-        </Toolbar>
+        <Link to="/about">
+          <div className="desktop-nav-button">
+            ABOUT ME
+          </div>
+        </Link>
       </div>
-    </AppBar>
+    </div>
+  )
+}
+
+const MobileNavbar = (): JSX.Element => {
+  return (
+    <div className="mobile-navbar">
+      
+    </div>
+  )
+}
+
+export const Navbar = (): JSX.Element => {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 768px)").matches
+  )
+
+  useEffect(() => {
+    window
+    .matchMedia("(min-width: 768px)")
+    .addEventListener('change', e => setMatches( e.matches ));
+  }, []);
+
+  return (
+    <div >
+      {matches && (<DesktopNavbar/>)}
+      {!matches && (<MobileNavbar/>)}
+    </div>
   );
-};
+}

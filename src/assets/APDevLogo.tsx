@@ -1,5 +1,3 @@
-const APDevLogoOpenSans = "";
-
 export const APDevLogo = () => {
   return (
     <div className="logo">
