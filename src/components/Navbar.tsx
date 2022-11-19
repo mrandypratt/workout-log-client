@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { APDevLogo } from '../assets/APDevLogo';
 import React, { useState, useEffect } from 'react';
-import resume from "../assets/AndyPrattResume.pdf"; // Cannot find module './resume.pdf'.ts(2307)
+import resume from "../assets/AndyPrattResume.pdf";
 
 const DesktopNavbar = (): JSX.Element => {
   return (
@@ -35,7 +35,7 @@ const DesktopNavbar = (): JSX.Element => {
 const MobileNavbar = (): JSX.Element => {
   return (
     <div className="mobile-navbar">
-      
+      Mobile Navbar
     </div>
   )
 }

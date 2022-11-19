@@ -1,5 +1,6 @@
-import {Routes, Route, Navigate} from "react-router-dom"
+import {Routes, Route} from "react-router-dom"
 import { About } from "./views/About"
+import { Portfolio } from "./views/Portfolio"
 import { Home } from "./views/Home"
 
 export const MainRoutes = () => {
@@ -7,6 +8,7 @@ export const MainRoutes = () => {
     <Routes>
       <Route path="/" element={<Home/>} />
       <Route path="/about" element={<About/>} />
+      <Route path="/portfolio" element={<Portfolio/>} />
     </Routes>
   )
 
