@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom"
 import { APDevLogo } from '../assets/APDevLogo';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import resume from "../assets/AndyPrattResume.pdf";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 const DesktopNavbar = (): JSX.Element => {
   return (
-    <div className="desktop-nav">
+    <div className="nav">
       <Link to="/">
-        <APDevLogo/>
+        <APDevLogo format="desktop"/>
       </Link>
-      <div className="desktop-nav-button-container">
+      <div className="nav-button-container">
         <Link to="/portfolio">
           <div className="desktop-nav-button">
               PORTFOLIO
@@ -33,9 +35,60 @@ const DesktopNavbar = (): JSX.Element => {
 }
 
 const MobileNavbar = (): JSX.Element => {
+  const [ menuDisplay, setMenuDisplay ] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuDisplay(!menuDisplay);
+  }
+  
   return (
-    <div className="mobile-navbar">
-      Mobile Navbar
+    <div className="nav">
+      <Link to="/">
+        <APDevLogo format="mobile"/>
+      </Link>
+
+      <div className="app-bar" onClick={toggleMenu}>
+        <MenuIcon fontSize="large"/>
+      </div>
+
+      {menuDisplay && 
+        <div className="app-bar-menu" onClick={toggleMenu}>
+
+          <div className="app-bar-header">
+
+          </div>
+
+          <CloseRoundedIcon className="close-feedback-icon" fontSize="large"/>
+          <Link to="/">
+            <div className="app-bar-menu-item">
+                HOME
+            </div>
+          </Link>
+
+          <Link to="/portfolio">
+            <div className="app-bar-menu-item">
+                PORTFOLIO
+            </div>
+          </Link>
+
+          <a href={resume} target="_blank" rel="noreferrer noopener">
+            <div className="app-bar-menu-item">
+              RESUME
+            </div>
+          </a>
+
+          <Link to="/about">
+            <div className="app-bar-menu-item">
+              ABOUT ME
+            </div>
+          </Link>
+
+        </div>
+      }
+
+      {menuDisplay && 
+        <div className="blur-bg" onClick={toggleMenu}/>
+      }
     </div>
   )
 }

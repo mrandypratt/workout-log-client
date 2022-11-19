@@ -1,10 +1,14 @@
-export const APDevLogo = () => {
+type LogoPropsType = {
+  format: "mobile" | "desktop"
+}
+
+export const APDevLogo = ({format}: LogoPropsType): JSX.Element => {
   return (
     <div className="logo">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        width="200"
+        width={format === "mobile" ? "160" : "200"}
         zoomAndPan="magnify"
         viewBox="0 0 150 37.5"
         height="50"
