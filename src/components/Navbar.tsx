@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 import resume from "../assets/AndyPrattResume.pdf";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import "../styles/Navbar.css"
 
 const DesktopNavbar = (): JSX.Element => {
   return (
-    <nav className="nav">
+    <nav className="navbar">
       <Link to="/">
         <APDevLogo format="desktop"/>
       </Link>
@@ -42,7 +43,7 @@ const MobileNavbar = (): JSX.Element => {
   }
   
   return (
-    <div className="nav">
+    <div className="navbar">
       <Link to="/">
         <APDevLogo format="mobile"/>
       </Link>
@@ -104,10 +105,9 @@ export const Navbar = (): JSX.Element => {
     .addEventListener('change', e => setMatches( e.matches ));
   }, []);
 
-  return (
-    <div >
-      {matches && (<DesktopNavbar/>)}
-      {!matches && (<MobileNavbar/>)}
-    </div>
-  );
+  if (matches) {
+    return <DesktopNavbar/>;
+  }
+
+  return <MobileNavbar/>;
 }
