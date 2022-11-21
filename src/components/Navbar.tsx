@@ -27,7 +27,7 @@ const DesktopNavbar = (): JSX.Element => {
 
         <Link to="/about">
           <div className="desktop-nav-button">
-            ABOUT ME
+            ABOUT
           </div>
         </Link>
       </div>
@@ -80,7 +80,7 @@ const MobileNavbar = (): JSX.Element => {
 
           <Link to="/about">
             <div className="app-bar-menu-item">
-              ABOUT ME
+              ABOUT
             </div>
           </Link>
 
