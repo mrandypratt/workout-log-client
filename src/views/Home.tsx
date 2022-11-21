@@ -2,41 +2,18 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import resume from "../assets/AndyPrattResume.pdf";
 
-const Paragraph = () => {
-  return (
-    <p className="home-paragraph">I'm a product-focused <b className="blue-pop">Software Engineer</b> who loves building products and solving problems.</p>
-  )
-}
-
-const SplitUpParagraph = () => {
-  return (
-    <div className="home-paragraph-container">
-      <p className="home-paragraph">I'm a product-focused</p>
-      
-      <p className="home-paragraph"><b className="blue-pop blue-split-text">Software Engineer</b></p>
-      
-      <p className="home-paragraph">who loves building products and solving problems.</p>
-    </div>
-  )
-}
 export const Home = () => {
-  const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 850px)").matches
-  )
-
-  useEffect(() => {
-    window
-    .matchMedia("(min-width: 850px)")
-    .addEventListener('change', e => setMatches( e.matches ));
-  }, []);
-
+  
   return (
     <div className="home-page-container">
       <h1 className="home-greeting">Hello! My name is </h1>
       <h2 className="orange-pop">Andy Pratt.</h2>
 
-      {matches && (<Paragraph/>)}
-      {!matches && (<SplitUpParagraph/>)}
+      <div className="home-paragraph-container">    
+      <p className="home-paragraph">I'm a <b className="blue-pop blue-split-text">Software Engineer</b> who loves</p>
+      
+      <p className="home-paragraph">building products and solving problems.</p>
+    </div>
 
       <div className="home-button-container">
         <Link to="/portfolio">

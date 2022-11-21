@@ -9,7 +9,7 @@ export const Footer = () => {
     <div className="footer">
 
       <div className="footer-title">
-        <h3>Professional Links</h3>
+        <h3 className="footer-header">Professional Links</h3>
       </div>
 
       <div className="footer-content">
