@@ -7,7 +7,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 const DesktopNavbar = (): JSX.Element => {
   return (
-    <div className="nav">
+    <nav className="nav">
       <Link to="/">
         <APDevLogo format="desktop"/>
       </Link>
@@ -30,7 +30,7 @@ const DesktopNavbar = (): JSX.Element => {
           </div>
         </Link>
       </div>
-    </div>
+    </nav>
   )
 }
 

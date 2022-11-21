@@ -1,18 +1,22 @@
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
+import EmailIcon from '@mui/icons-material/Email';
 
 
 export const Footer = () => {
 
   return (
-    <div className="footer">
+    <footer className="footer">
 
       <div className="footer-title">
-        <h3 className="footer-header">Professional Links</h3>
+        <h3 className="footer-header">Let's talk tech!</h3>
       </div>
 
       <div className="footer-content">
+        <a className="footer-links" href="mailto:mrandypratt@gmail.com" target="_blank" rel="noreferrer noopener" style={{margin: 10}}>
+          <EmailIcon fontSize='large' color="inherit" />
+        </a>
+
         <a className="footer-links" href="https://github.com/mrandypratt" target="_blank" rel="noreferrer noopener" style={{margin: 10}}>
           <GitHubIcon fontSize='large' color="inherit" />
         </a>
@@ -21,6 +25,8 @@ export const Footer = () => {
           <LinkedInIcon fontSize='large' color="inherit" />
         </a>
       </div>
-    </div>
+
+      <p className="footer-text">I am looking for SWE opportunities	&#x1f440;</p>
+    </footer>
   )
 }
