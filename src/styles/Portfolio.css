@@ -1,0 +1,52 @@
+.portfolio-container {
+  display: grid;
+  grid-template-areas: 
+    "nav nav nav nav nav"
+    "left-padding header header header right-padding"
+    "left-padding summary summary summary right-padding"
+    "left-padding cta cta cta right-padding"
+    "left-padding project1 project2 project3 right-padding"
+    "footer footer footer footer footer";
+  grid-template-rows: .1fr .3fr .5fr .5fr 2fr .3fr;
+  grid-template-columns: .2fr 1fr 1fr 1fr .2fr;
+  grid-row-gap: 1rem;
+  grid-column-gap: 2rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+.portfolio-heading-container{
+  grid-area: header;
+  text-align: center;
+  background-color: darkgrey;
+}
+
+.portfolio-summary-container {
+  grid-area: summary;
+  text-align: center;
+  background-color: rgb(23, 232, 244);
+}
+
+.portfolio-cta-container {
+  grid-area: cta;
+  text-align: center;
+  background-color: rgb(64, 247, 88);
+}
+
+.portfolio-project-card-container {
+  text-align: center;
+  background-color: rgb(75, 75, 75);
+}
+
+#project1 {
+  grid-area: project1;
+}
+
+#project2 {
+  grid-area: project2;
+}
+
+#project3 {
+  grid-area: project3;
+}
+
