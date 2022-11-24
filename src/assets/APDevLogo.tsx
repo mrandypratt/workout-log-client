@@ -4,7 +4,7 @@ type LogoPropsType = {
 
 export const APDevLogo = ({format}: LogoPropsType): JSX.Element => {
   return (
-    <div className="logo">
+    <div className="ap-dev-logo">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"

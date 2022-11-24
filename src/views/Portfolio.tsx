@@ -1,6 +1,8 @@
+import { CWFLogo } from "../assets/CWFLogo";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import "../styles/Portfolio.css"
+
 
 export const Portfolio = () => {
   return (
@@ -12,13 +14,14 @@ export const Portfolio = () => {
 
         <div className="portfolio-header-container">
           <h1 className="portfolio-header">
-            Cards with Friends
+            <a className="project-link" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer">Cards with Friends</a>
           </h1>
+            <a className="project-link" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer"><CWFLogo format="desktop"/></a>
         </div>
 
         <div className="portfolio-summary-container">
           <p className="portfolio-summary">
-            Cards with Friends is a multi-player Cards Against Humanity web app.
+            <a className="project-link" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer"><b>Cards with Friends </b></a>is a multi-player Cards Against Humanity web app.
           </p>
           <p className="portfolio-summary">
             It also happens to be my first solo product to design, build, and deploy!
