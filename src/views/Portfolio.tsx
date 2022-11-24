@@ -34,7 +34,7 @@ export const Portfolio = () => {
           </h2>
         </div>
 
-        <div className="portfolio-project-card-container" id="project1">
+        <div className="portfolio-project-card" id="project1">
           <h3 className="portfolio-project-card-header">
             Version 1:
           </h3>
@@ -43,7 +43,7 @@ export const Portfolio = () => {
           </h3>
         </div>
 
-        <div className="portfolio-project-card-container" id="project2">
+        <div className="portfolio-project-card" id="project2">
           <h3 className="portfolio-project-card-header">
             Version 2:
           </h3>
@@ -52,7 +52,7 @@ export const Portfolio = () => {
           </h3>
         </div>
 
-        <div className="portfolio-project-card-container" id="project3">
+        <div className="portfolio-project-card" id="project3">
           <h3 className="portfolio-project-card-header">
             Version 3
           </h3>
