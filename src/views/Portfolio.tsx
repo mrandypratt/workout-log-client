@@ -11,20 +11,19 @@ export const Portfolio = () => {
       <Navbar/>
 
       <div className="portfolio-content-wrapper">
-
-        <div className="portfolio-header-container">
+        <a className="project-link portfolio-header-container" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer">
           <h1 className="portfolio-header">
-            <a className="project-link" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer">Cards with Friends</a>
+              Cards with Friends
           </h1>
-            <a className="project-link" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer"><CWFLogo format="desktop"/></a>
-        </div>
+          <CWFLogo format="desktop"/>
+        </a>
 
         <div className="portfolio-summary-container">
           <p className="portfolio-summary">
             <a className="project-link" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer"><b>Cards with Friends </b></a>is a multi-player Cards Against Humanity web app.
           </p>
           <p className="portfolio-summary">
-            It also happens to be my first solo product to design, build, and deploy!
+            It also happens to be my first product to design, build, and deploy from scratch!
           </p>
         </div>
 

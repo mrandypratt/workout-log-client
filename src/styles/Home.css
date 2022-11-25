@@ -85,6 +85,10 @@
   font-weight: 600;
 }
 
+.home-button:hover {
+  background: #3a3a3a;
+}
+
 .blue-split-text {
   margin-top: 20px;
   margin-bottom: 20px;

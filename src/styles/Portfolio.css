@@ -52,13 +52,13 @@
   }
 }
 
-.cwf-logo {
-
-}
-
 .project-link {
   text-decoration: none;
   color: white;
+}
+
+.project-link:hover {
+  color:rgb(199, 199, 199)
 }
 
 .portfolio-header-container {

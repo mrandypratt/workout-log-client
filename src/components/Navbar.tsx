@@ -10,7 +10,9 @@ const DesktopNavbar = (): JSX.Element => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <APDevLogo format="desktop"/>
+        <div className="logo">
+          <APDevLogo format="desktop"/>
+        </div>
       </Link>
       <div className="nav-button-container">
         <Link to="/portfolio">
@@ -96,12 +98,12 @@ const MobileNavbar = (): JSX.Element => {
 
 export const Navbar = (): JSX.Element => {
   const [matches, setMatches] = useState(
-    window.matchMedia("(min-width: 768px)").matches
+    window.matchMedia("(min-width: 1000px)").matches
   )
 
   useEffect(() => {
     window
-    .matchMedia("(min-width: 768px)")
+    .matchMedia("(min-width: 1000px)")
     .addEventListener('change', e => setMatches( e.matches ));
   }, []);
 

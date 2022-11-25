@@ -4,10 +4,6 @@ a {
   text-decoration: none;
 }
 
-.logo {
-  align-self: left;
-}
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -23,9 +19,27 @@ a {
   justify-content: space-evenly;
 }
 
+.desktop-nav-button {
+  color: white;
+  text-decoration: none;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+}
+
+.desktop-nav-button:hover {
+  color:  #b3b3b3;
+}
+
 .app-bar {
   padding-right: 25px;
   cursor: pointer;
+}
+
+.app-bar:hover {
+  color: #b3b3b3;
 }
 
 .app-bar-menu {
@@ -71,6 +85,10 @@ a {
   letter-spacing: 0.02857em;
 }
 
+.app-bar-menu-item:hover {
+  color:  #b3b3b3;
+}
+
 .close-feedback-icon {
   color: white;
   cursor: pointer;
@@ -81,12 +99,6 @@ a {
   padding-top: 10px;
 }
 
-.desktop-nav-button {
-  color: white;
-  text-decoration: none;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.75;
-  letter-spacing: 0.02857em;
+.close-feedback-icon:hover {
+  color: #b3b3b3;
 }
