@@ -78,6 +78,17 @@
   align-items: center;
 }
 
+.cwf-logo {
+  width: 150px;
+}
+
+@media (max-width: 600px) {
+  .cwf-logo {
+    width: 250px;
+  }
+}
+
+
 .portfolio-summary-container {
   grid-area: summary;
   text-align: center;

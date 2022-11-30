@@ -1,17 +1,15 @@
 type LogoPropsType = {
-  format: "mobile" | "desktop"
+  format: "mobile" | "desktop" | "project";
 }
 
-export const CWFLogo = ({format}: LogoPropsType): JSX.Element => {
+export const CWFLogo = (): JSX.Element => {
   return (
     <svg
       className="cwf-logo"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width={format === "mobile" ? "160" : "100"}
       zoomAndPan="magnify"
       viewBox="0 0 375 337.499995"
-      height="100"
       preserveAspectRatio="xMidYMid meet"
       version="1.0"
     >

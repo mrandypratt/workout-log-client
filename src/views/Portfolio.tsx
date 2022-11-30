@@ -16,7 +16,7 @@ export const Portfolio = () => {
           <h1 className="portfolio-header">
               Cards with Friends
           </h1>
-          <CWFLogo format="desktop"/>
+          <CWFLogo/>
         </a>
 
         <div className="portfolio-summary-container">
