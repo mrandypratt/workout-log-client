@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CWFLogo } from "../assets/CWFLogo";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
@@ -23,7 +24,7 @@ export const Portfolio = () => {
             <a className="project-link" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer"><b>Cards with Friends </b></a>is a multi-player Cards Against Humanity web app.
           </p>
           <p className="portfolio-summary">
-            It also happens to be my first product to design, build, and deploy from scratch!
+            It also happens to be my first product to design, build, and deploy!
           </p>
         </div>
 
@@ -33,32 +34,32 @@ export const Portfolio = () => {
           </h2>
         </div>
 
-        <div className="portfolio-project-card" id="project1">
+        <Link to="project-v1" className="portfolio-project-card" id="project1">
           <h3 className="portfolio-project-card-header">
             Version 1:
           </h3>
           <h3 className="portfolio-project-card-header">
             Single-Device Gameplay (MVP)
           </h3>
-        </div>
+        </Link>
 
-        <div className="portfolio-project-card" id="project2">
+        <Link to="project-v2" className="portfolio-project-card" id="project2">
           <h3 className="portfolio-project-card-header">
             Version 2:
           </h3>
           <h3 className="portfolio-project-card-header">
             Multi-Device Gameplay
           </h3>
-        </div>
+        </Link>
 
-        <div className="portfolio-project-card" id="project3">
+        <Link to="project-v3" className="portfolio-project-card" id="project3">
           <h3 className="portfolio-project-card-header">
             Version 3
           </h3>
           <h3 className="portfolio-project-card-header">
             Single-Player: Online Simulation
           </h3>
-        </div>
+        </Link>
       </div>
 
       <Footer/>
