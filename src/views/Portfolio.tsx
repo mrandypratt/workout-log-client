@@ -38,27 +38,27 @@ export const Portfolio = () => {
           <h3 className="portfolio-project-card-header">
             Version 1:
           </h3>
-          <h3 className="portfolio-project-card-header">
+          <h4 className="portfolio-project-card-subtitle">
             Single-Device Gameplay (MVP)
-          </h3>
+          </h4>
         </Link>
 
         <Link to="project-v2" className="portfolio-project-card" id="project2">
           <h3 className="portfolio-project-card-header">
             Version 2:
           </h3>
-          <h3 className="portfolio-project-card-header">
+          <h4 className="portfolio-project-card-subtitle">
             Multi-Device Gameplay
-          </h3>
+          </h4>
         </Link>
 
         <Link to="project-v3" className="portfolio-project-card" id="project3">
           <h3 className="portfolio-project-card-header">
             Version 3
           </h3>
-          <h3 className="portfolio-project-card-header">
+          <h4 className="portfolio-project-card-subtitle">
             Single-Player: Online Simulation
-          </h3>
+          </h4>
         </Link>
       </div>
 
