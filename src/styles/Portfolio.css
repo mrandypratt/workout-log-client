@@ -80,12 +80,12 @@
   align-items: center;
 }
 
-.cwf-logo {
-  max-height: 125px;
+.cwf-logo-portfolio {
+  width: 125px;
 }
 
 @media (max-width: 600px) {
-  .cwf-logo {
+  .cwf-logo-portfolio {
     width: 150px;
   }
 }

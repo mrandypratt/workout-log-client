@@ -1,7 +1,11 @@
-export const CWFLogo = (): JSX.Element => {
+type LogoPropsType = {
+  className: "cwf-logo-project" | "cwf-logo-portfolio";
+}
+
+export const CWFLogo = ({className}: LogoPropsType): JSX.Element => {
   return (
     <svg
-      className="cwf-logo"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       zoomAndPan="magnify"

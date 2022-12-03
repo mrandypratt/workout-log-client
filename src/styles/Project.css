@@ -51,12 +51,12 @@
   max-width: 100%;
 }
 
-.cwf-logo {
-  width: 250px;
+.cwf-logo-project {
+  width: 225px;
 }
 
 @media (max-width: 600px) {
-  .cwf-logo {
+  .cwf-logo-project {
     width: 190px;
   }
 }

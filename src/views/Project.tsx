@@ -21,7 +21,7 @@ export const Project = () => {
         <p className="message-cta">In the meantime, click the logo below to check out my game!</p>
 
         <a className="project-link" href="http://www.cardswithfriendsgame.com" target="_blank" rel="noreferrer">
-          <CWFLogo/>
+          <CWFLogo className="cwf-logo-project"/>
         </a>
 
       </div>
