@@ -1,7 +1,3 @@
-type LogoPropsType = {
-  format: "mobile" | "desktop" | "project";
-}
-
 export const CWFLogo = (): JSX.Element => {
   return (
     <svg

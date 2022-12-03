@@ -81,12 +81,12 @@
 }
 
 .cwf-logo {
-  width: 150px;
+  max-height: 125px;
 }
 
 @media (max-width: 600px) {
   .cwf-logo {
-    width: 250px;
+    width: 150px;
   }
 }
 
