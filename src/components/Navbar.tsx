@@ -1,143 +1,115 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
+import { Link } from "react-router-dom"
+import { APDevLogo } from '../assets/APDevLogo';
+import { useState, useEffect } from 'react';
+import resume from "../assets/AndyPrattResume.pdf";
 import MenuIcon from '@mui/icons-material/Menu';
-import { ViewType } from '../styles/ViewType';
-import { VIEWS } from '../constants/views';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import "../styles/Navbar.css"
 
-const APDevIcon = require('../assets/APDevLogo.png');
+const DesktopNavbar = (): JSX.Element => {
+  return (
+    <nav className="navbar">
+      <Link to="/">
+        <div className="logo">
+          <APDevLogo format="desktop"/>
+        </div>
+      </Link>
+      <div className="nav-button-container">
+        <Link to="/portfolio">
+          <div className="desktop-nav-button">
+              PORTFOLIO
+          </div>
+        </Link>
 
-const pages = [VIEWS.portfolio];
+        <a href={resume} target="_blank" rel="noreferrer noopener">
+          <div className="desktop-nav-button">
+            RESUME
+          </div>
+        </a>
 
-export const Navbar = ({ setView }: ViewType) => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+        <Link to="/about">
+          <div className="desktop-nav-button">
+            ABOUT
+          </div>
+        </Link>
+      </div>
+    </nav>
+  )
+}
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
+const MobileNavbar = (): JSX.Element => {
+  const [ menuDisplay, setMenuDisplay ] = useState(false);
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  const updateToView = {
-    home: () => {
-      setView(VIEWS.home)
-    },
-  
-    portfolio: () => {
-      setView(VIEWS.portfolio)
-    },
-  
-    about: () => {
-      setView(VIEWS.about)
-    }
+  const toggleMenu = () => {
+    setMenuDisplay(!menuDisplay);
   }
   
   return (
-    <AppBar style={{backgroundColor: "#292929", fontStyle: "Roboto"}} color="inherit" position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            <img src={APDevIcon} alt="<APDev/>" onClick={updateToView.home} style={{cursor: "pointer"}}/>
+    <div className="navbar">
+      <Link to="/">
+        <APDevLogo format="mobile"/>
+      </Link>
 
-          </Typography>
+      <div className="app-bar" onClick={toggleMenu}>
+        <MenuIcon fontSize="large"/>
+      </div>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={updateToView.portfolio}>
-                  <Typography textAlign="center">{page.toUpperCase()}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            <img src={APDevIcon} alt="<APDev/>" onClick={updateToView.home} style={{cursor: "pointer"}}/>
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={updateToView.portfolio}
-                sx={{ my: 2, color: 'inherit', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box>
+      {menuDisplay && 
+        <div className="app-bar-menu" onClick={toggleMenu}>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
-  );
-};
+          <div className="app-bar-header">
+
+          </div>
+
+          <CloseRoundedIcon className="close-feedback-icon" fontSize="large"/>
+          <Link to="/">
+            <div className="app-bar-menu-item">
+                HOME
+            </div>
+          </Link>
+
+          <Link to="/portfolio">
+            <div className="app-bar-menu-item">
+                PORTFOLIO
+            </div>
+          </Link>
+
+          <a href={resume} target="_blank" rel="noreferrer noopener">
+            <div className="app-bar-menu-item">
+              RESUME
+            </div>
+          </a>
+
+          <Link to="/about">
+            <div className="app-bar-menu-item">
+              ABOUT
+            </div>
+          </Link>
+
+        </div>
+      }
+
+      {menuDisplay && 
+        <div className="blur-bg" onClick={toggleMenu}/>
+      }
+    </div>
+  )
+}
+
+export const Navbar = (): JSX.Element => {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(min-width: 1000px)").matches
+  )
+
+  useEffect(() => {
+    window
+    .matchMedia("(min-width: 1000px)")
+    .addEventListener('change', e => setMatches( e.matches ));
+  }, []);
+
+  if (matches) {
+    return <DesktopNavbar/>;
+  }
+
+  return <MobileNavbar/>;
+}

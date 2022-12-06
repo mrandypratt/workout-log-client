@@ -1,0 +1,104 @@
+/* NAVBAR */
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-area: nav;
+}
+
+.nav-button-container {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-self: "right";
+  justify-content: space-evenly;
+}
+
+.desktop-nav-button {
+  color: white;
+  text-decoration: none;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+}
+
+.desktop-nav-button:hover {
+  color:  #b3b3b3;
+}
+
+.app-bar {
+  padding-right: 25px;
+  cursor: pointer;
+}
+
+.app-bar:hover {
+  color: #b3b3b3;
+}
+
+.app-bar-menu {
+  padding-top: 60px;
+  position: fixed;
+  background: #292929;
+  box-shadow: -5px 0px 10px 5px rgb(18, 227, 238);
+  border:#5ce1e6;
+  border-width: 2px;
+  z-index: 5;
+  top:0;
+  right:0;
+  width: 40vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  text-align: center;
+  /* transition:ease; */
+}
+
+.blur-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #141414;
+  opacity: 0.85;
+  overflow: hidden; /* disable scrolling*/
+  z-index: 3; /* higher than all other items, but lower than 
+    the appbar*/
+}
+
+.app-bar-menu-item {
+  margin: 15px;
+  color: white;
+  text-decoration: none;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+}
+
+.app-bar-menu-item:hover {
+  color:  #b3b3b3;
+}
+
+.close-feedback-icon {
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-right: 30px;
+  padding-top: 10px;
+}
+
+.close-feedback-icon:hover {
+  color: #b3b3b3;
+}
