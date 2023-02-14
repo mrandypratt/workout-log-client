@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import TextField from '@mui/material/TextField';
 import "../styles/Home.css"
 import { useState } from "react";
 
-export const Home = () => {
+export const Register = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
@@ -21,11 +20,11 @@ export const Home = () => {
       <Navbar/>
 
       <div className="page-content-container">
-        
         <div className="login-container">
-          <h1>Welcome to Workout Log</h1>
 
           <div className="login-form">
+            <h1>Create New Account</h1>
+
             <TextField 
               className="text-field"
               id="outlined-basic" 
@@ -48,16 +47,10 @@ export const Home = () => {
               id="authenticate-button"
               type="submit"
               >
-              Log In
+              Create Account
             </button>
 
           </div>
-
-          <hr className="divider"></hr>
-
-          <Link to="/register" id="register-button">
-            Create Account
-          </Link>
 
         </div>
 

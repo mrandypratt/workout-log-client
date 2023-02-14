@@ -1,14 +1,14 @@
 import { Navbar } from "../components/Navbar";
-import "../styles/About.css";
+import "../styles/Register.css";
 
-export const About = () => {
+export const Register = () => {
 
   return (
     <div className="page-container">
       <Navbar/>
 
       <div className="page-content-container">
-
+        Register
       </div>
 
 
