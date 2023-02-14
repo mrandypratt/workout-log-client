@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import TextField from '@mui/material/TextField';
 import "../styles/Home.css"
-import { useState } from "react";
+import { getServerURL } from "../functions/getURL";
 
 export const Home = () => {
   const [username, setUsername] = useState<string>("");
@@ -16,9 +17,40 @@ export const Home = () => {
     setPassword(event.target.value)
   }
 
-  const authenticateUser = (): void => {
-    console.log(username);
-    console.log(password);
+  const authenticateUser = async () => {
+    const baseURL = getServerURL();
+    const APIURL = baseURL + "/auth";
+
+    const authData = {
+      username: username,
+      password: password
+    }
+
+    console.log(authData);
+    
+    try {
+      const response = await fetch(APIURL, {
+        method: 'POST',
+        body: JSON.stringify(authData),
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`Error! status: ${response.status}`);
+      }
+
+      const result = await response.json();
+
+      console.log(result);
+
+    } catch (e) {
+      console.error(e)
+    } finally {
+      console.log("Complete!");
+    }
   }
 
   return (
