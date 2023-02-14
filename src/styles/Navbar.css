@@ -1,5 +1,4 @@
 /* NAVBAR */
-
 a {
   text-decoration: none;
 }
@@ -9,6 +8,17 @@ a {
   justify-content: space-between;
   align-items: center;
   grid-area: nav;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  padding-left: 10px;
 }
 
 .nav-button-container {

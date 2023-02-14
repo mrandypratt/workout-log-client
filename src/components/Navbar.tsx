@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom"
-import { APDevLogo } from '../assets/APDevLogo';
 import { useState, useEffect } from 'react';
-import resume from "../assets/AndyPrattResume.pdf";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import "../styles/Navbar.css"
@@ -11,25 +9,20 @@ const DesktopNavbar = (): JSX.Element => {
     <nav className="navbar">
       <Link to="/">
         <div className="logo">
-          <APDevLogo format="desktop"/>
+          Workout Log
         </div>
       </Link>
       <div className="nav-button-container">
-        <Link to="/portfolio">
+
+        <Link to="/login">
           <div className="desktop-nav-button">
-              PORTFOLIO
+            Login
           </div>
         </Link>
 
-        <a href={resume} target="_blank" rel="noreferrer noopener">
+        <Link to="/register">
           <div className="desktop-nav-button">
-            RESUME
-          </div>
-        </a>
-
-        <Link to="/about">
-          <div className="desktop-nav-button">
-            ABOUT
+            Register
           </div>
         </Link>
       </div>
@@ -46,8 +39,8 @@ const MobileNavbar = (): JSX.Element => {
   
   return (
     <div className="navbar">
-      <Link to="/">
-        <APDevLogo format="mobile"/>
+      <Link to="/" className="logo">
+        Workout Log
       </Link>
 
       <div className="app-bar" onClick={toggleMenu}>
@@ -64,25 +57,19 @@ const MobileNavbar = (): JSX.Element => {
           <CloseRoundedIcon className="close-feedback-icon" fontSize="large"/>
           <Link to="/">
             <div className="app-bar-menu-item">
-                HOME
+                Home
             </div>
           </Link>
 
-          <Link to="/portfolio">
+          <Link to="/login">
             <div className="app-bar-menu-item">
-                PORTFOLIO
+                Login
             </div>
           </Link>
 
-          <a href={resume} target="_blank" rel="noreferrer noopener">
+          <Link to="/register">
             <div className="app-bar-menu-item">
-              RESUME
-            </div>
-          </a>
-
-          <Link to="/about">
-            <div className="app-bar-menu-item">
-              ABOUT
+              Register
             </div>
           </Link>
 
