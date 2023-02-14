@@ -8,12 +8,17 @@ export const Home = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const updateUsername = (event: any) => {
+  const updateUsername = (event: any): void => {
     setUsername(event.target.value);
   }
 
-  const updatePassword = (event: any) => {
+  const updatePassword = (event: any): void => {
     setPassword(event.target.value)
+  }
+
+  const authenticateUser = (): void => {
+    console.log(username);
+    console.log(password);
   }
 
   return (
@@ -23,31 +28,34 @@ export const Home = () => {
       <div className="page-content-container">
         
         <div className="login-container">
-          <h1>Welcome to Workout Log</h1>
+          <h1 id="form-title">Welcome to Workout Log</h1>
+          <hr className="divider-top"></hr> 
 
           <div className="login-form">
-            <TextField 
-              className="text-field"
-              id="outlined-basic" 
-              label="User Name" 
-              variant="outlined" 
-              onChange={updateUsername}
+            <div className="text-field-container">
+              <TextField 
+                id="outlined-basic" 
+                label="User Name" 
+                variant="outlined" 
+                onChange={updateUsername}
+                />
+            </div>
+
+            <div className="text-field-container">
+              <TextField
+                id="outlined-password-input"
+                label="Password"
+                type="password"
+                autoComplete="current-password"
+                onChange={updatePassword}
               />
-
-            <TextField
-              className="text-field"
-              id="outlined-password-input"
-              label="Password"
-              type="password"
-              autoComplete="current-password"
-              onChange={updatePassword}
-            />
-
+            </div>
 
             <button 
               id="authenticate-button"
               type="submit"
-              >
+              onClick={authenticateUser}
+            >
               Log In
             </button>
 

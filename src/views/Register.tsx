@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import TextField from '@mui/material/TextField';
 import "../styles/Home.css"
@@ -7,12 +8,17 @@ export const Register = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const updateUsername = (event: any) => {
+  const updateUsername = (event: any): void => {
     setUsername(event.target.value);
   }
 
-  const updatePassword = (event: any) => {
+  const updatePassword = (event: any): void => {
     setPassword(event.target.value)
+  }
+
+  const registerAccount = (): void => {
+    console.log(username);
+    console.log(password);
   }
 
   return (
@@ -20,34 +26,39 @@ export const Register = () => {
       <Navbar/>
 
       <div className="page-content-container">
+        
         <div className="login-container">
+          
+          <h1 id="form-title">Create New Account</h1>
+
+          <hr className="divider-top"></hr> 
 
           <div className="login-form">
-            <h1>Create New Account</h1>
+            <div className="text-field-container">
+              <TextField 
+                id="outlined-basic" 
+                label="User Name" 
+                variant="outlined" 
+                onChange={updateUsername}
+                />
+            </div>
 
-            <TextField 
-              className="text-field"
-              id="outlined-basic" 
-              label="User Name" 
-              variant="outlined" 
-              onChange={updateUsername}
+            <div className="text-field-container">
+              <TextField
+                id="outlined-password-input"
+                label="Password"
+                type="password"
+                autoComplete="current-password"
+                onChange={updatePassword}
               />
-
-            <TextField
-              className="text-field"
-              id="outlined-password-input"
-              label="Password"
-              type="password"
-              autoComplete="current-password"
-              onChange={updatePassword}
-            />
-
+            </div>
 
             <button 
-              id="authenticate-button"
+              id="register-button"
               type="submit"
-              >
-              Create Account
+              onClick={registerAccount}
+            >
+              Register Account
             </button>
 
           </div>
