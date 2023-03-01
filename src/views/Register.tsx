@@ -3,7 +3,6 @@ import { Navbar } from "../components/Navbar";
 import TextField from '@mui/material/TextField';
 import "../styles/Home.css"
 import { getServerURL } from "../functions/getURL";
-import { responsiveFontSizes } from "@mui/material";
 
 export const Register = () => {
   const [username, setUsername] = useState<string>("");
@@ -96,7 +95,6 @@ export const Register = () => {
         </div>
 
       </div>
-
 
     </div>
   );
