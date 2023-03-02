@@ -13,18 +13,17 @@ export const Register = () => {
     setUsername(event.target.value);
   }
 
-  const updatePassword = (event: any): void => {
-    setPassword(event.target.value)
-  }
-
   const registerAccount = async () => {
     const baseURL = getServerURL();
-    const APIURL = baseURL + "/register";
+    const APIURL = baseURL + "/auth/register";
 
     const authData = {
       username: username,
       password: password
     }
+
+    console.log("Auth Data")
+    console.log(authData)
     
     try {
       const response = await fetch(APIURL, {
@@ -42,6 +41,7 @@ export const Register = () => {
 
       const result = await response.json();
 
+      console.log("Result:")
       console.log(result);
 
     } catch (e) {
@@ -75,7 +75,9 @@ export const Register = () => {
             </div>
 
             <div className="text-field-container">
-              <PasswordToggleVis/>
+              <PasswordToggleVis 
+                setPassword={setPassword}
+              />
             </div>
 
             <button 

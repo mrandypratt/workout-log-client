@@ -14,10 +14,6 @@ export const Home = () => {
     setUsername(event.target.value);
   }
 
-  const updatePassword = (event: any): void => {
-    setPassword(event.target.value)
-  }
-
   const authenticateUser = async () => {
     const baseURL = getServerURL();
     const APIURL = baseURL + "/auth/login";
@@ -79,7 +75,9 @@ export const Home = () => {
             </div>
 
             <div className="text-field-container">
-              <PasswordToggleVis/>
+              <PasswordToggleVis
+                setPassword={setPassword}
+              />
             </div>
 
             <button 

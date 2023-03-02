@@ -2,7 +2,11 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput } from "@mui/material";
 import { useState } from 'react';
 
-export const PasswordToggleVis = () => {
+type PropsType = {
+  setPassword: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export const PasswordToggleVis = ({ setPassword }: PropsType ) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -11,11 +15,16 @@ export const PasswordToggleVis = () => {
     event.preventDefault();
   };
 
+  const updatePassword = (event: any) => {
+    setPassword(event.target.value);
+  }
+
   return (
     <FormControl sx={{ width: "100%" }} variant="outlined">
     <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
     <OutlinedInput
       id="outlined-adornment-password"
+      onChange={updatePassword}
       type={showPassword ? 'text' : 'password'}
       endAdornment={
         <InputAdornment position="end">
