@@ -19,13 +19,14 @@ export const Home = () => {
 
   const authenticateUser = async () => {
     const baseURL = getServerURL();
-    const APIURL = baseURL + "/auth";
+    const APIURL = baseURL + "/auth/login";
 
     const authData = {
       username: username,
       password: password
     }
 
+    console.log("Auth Data:")
     console.log(authData);
     
     try {
@@ -44,11 +45,13 @@ export const Home = () => {
 
       const result = await response.json();
 
+      console.log("Result:")
       console.log(result);
 
     } catch (e) {
       console.error(e)
     } finally {
+
       console.log("Complete!");
     }
   }
