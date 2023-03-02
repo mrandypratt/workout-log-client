@@ -3,6 +3,7 @@ import { Navbar } from "../components/Navbar";
 import TextField from '@mui/material/TextField';
 import "../styles/Home.css"
 import { getServerURL } from "../functions/getURL";
+import { PasswordToggleVis } from "../components/PasswordToggleVis";
 
 export const Register = () => {
   const [username, setUsername] = useState<string>("");
@@ -69,17 +70,12 @@ export const Register = () => {
                 label="User Name" 
                 variant="outlined" 
                 onChange={updateUsername}
+                style={{width: "100%"}}
                 />
             </div>
 
             <div className="text-field-container">
-              <TextField
-                id="outlined-password-input"
-                label="Password"
-                type="password"
-                autoComplete="current-password"
-                onChange={updatePassword}
-              />
+              <PasswordToggleVis/>
             </div>
 
             <button 
