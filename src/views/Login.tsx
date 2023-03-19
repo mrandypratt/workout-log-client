@@ -6,7 +6,7 @@ import "../styles/Home.css"
 import { getServerURL } from "../functions/getURL";
 import { PasswordToggleVis } from "../components/PasswordToggleVis";
 
-export const Home = () => {
+export const Login = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
