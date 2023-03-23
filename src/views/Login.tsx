@@ -7,6 +7,7 @@ import { getServerURL } from "../functions/getURL";
 import { PasswordToggleVis } from "../components/PasswordToggleVis";
 import { AuthContext } from "../Routes";
 import { Alert } from "@mui/material";
+import { LoginCredentials } from "../types/User";
 
 export const Login = () => {
   const [username, setUsername] = useState<string>("");
@@ -24,18 +25,15 @@ export const Login = () => {
     const baseURL = getServerURL();
     const APIURL = baseURL + "/auth/login";
 
-    const authData = {
+    const loginCredentials: LoginCredentials = {
       username: username,
       password: password
     }
-
-    console.log("Auth Data:")
-    console.log(authData);
     
     try {
       const response = await fetch(APIURL, {
         method: 'POST',
-        body: JSON.stringify(authData),
+        body: JSON.stringify(loginCredentials),
         headers: {
           'Content-Type': 'application/json',
           Accept: 'application/json',

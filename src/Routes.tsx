@@ -5,10 +5,11 @@ import { Exercises } from "./views/Exercises";
 import { Routines } from "./views/Routines";
 import { History } from "./views/History";
 import { createContext, useReducer } from "react";
+import { User } from "./types/User";
 
 type AuthState = {
   isAuthenticated: boolean;
-  user: string | null;
+  user: User | null;
   token: string | null;
 };
 
