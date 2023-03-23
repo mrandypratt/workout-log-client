@@ -12,14 +12,21 @@ type AuthState = {
   token: string | null;
 };
 
+type GlobalContext = {
+  authState: AuthState,
+  dispatch: React.Dispatch<any> | null,
+}
+
 const initialState: AuthState = {
   isAuthenticated: false,
   user: null,
   token: null,
 };
 
-export const AuthContext = createContext(initialState);
-
+export const AuthContext = createContext<GlobalContext>({
+  authState: initialState, 
+  dispatch: null
+});
 
 const reducer = (state: AuthState, action: any) => {
   switch (action.type) {
@@ -48,7 +55,7 @@ export const MainRoutes = (): JSX.Element => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <AuthContext.Provider value={initialState}>
+    <AuthContext.Provider value={{authState: state, dispatch: dispatch}}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />

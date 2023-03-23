@@ -6,14 +6,15 @@ import "../styles/Home.css"
 import { getServerURL } from "../functions/getURL";
 import { PasswordToggleVis } from "../components/PasswordToggleVis";
 import { AuthContext } from "../Routes";
+import { Alert } from "@mui/material";
 
 export const Login = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const authState = useContext(AuthContext);
+  const [failedAttempt, setFailedAttempt] = useState<boolean>(false);
 
-  console.log(authState);
+  const authState = useContext(AuthContext);
   
   const updateUsername = (event: any): void => {
     setUsername(event.target.value);
@@ -41,7 +42,11 @@ export const Login = () => {
         },
       });
 
-      if (!response.ok) {
+      if (response.status === 401){
+        console.log("Invalid Credentials")
+        setFailedAttempt(true);
+        // TODO: Alert User of failed attempt
+      } else if (!response.ok) {
         throw new Error(`Error! status: ${response.status}`);
       }
 
@@ -84,6 +89,10 @@ export const Login = () => {
                 setPassword={setPassword}
               />
             </div>
+
+            {failedAttempt && 
+              <Alert severity="error">Invalid Credentials</Alert>
+            }
 
             <button 
               id="authenticate-button"
