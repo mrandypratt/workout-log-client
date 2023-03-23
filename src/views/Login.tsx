@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import TextField from '@mui/material/TextField';
 import "../styles/Home.css"
 import { getServerURL } from "../functions/getURL";
 import { PasswordToggleVis } from "../components/PasswordToggleVis";
+import { AuthContext } from "../Routes";
 
 export const Login = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
+  const authState = useContext(AuthContext);
+
+  console.log(authState);
+  
   const updateUsername = (event: any): void => {
     setUsername(event.target.value);
   }
